@@ -4,7 +4,7 @@
 #define RCLK  P3_5
 #define SRCLK P3_6
 
-unsigned char dl=15;//scan speed
+unsigned char dl=10;//scan speed
 
 void delay(unsigned char);
 void row_ctrl(unsigned char data);
@@ -198,7 +198,6 @@ void letter_E(void)
     P0_7=0;
     delay(dl);
     P0_7=1;
-
 }
 
 void letter_W(void)
@@ -216,15 +215,25 @@ void main(void)
 {
     while(1)
     {
-        //letter_H();delay(50);
-        //letter_A();delay(50);
-        //letter_P();delay(50);
-        //letter_P();delay(50);
-        //letter_Y();delay(50);
+        for(unsigned char i=0;i<100;i++)
+        {
+            letter_H();
+        }
+        P0=0xFF;
+        delay(500);
+        //letter_A();
+        //letter_P();
+        //letter_P();
+        //letter_Y();
 
-        //letter_N();delay(50);
-        letter_E();delay(50);
-        //letter_W();delay(50);
+        //letter_N();
+        for(unsigned char i=0;i<100;i++)
+        {
+            letter_E();
+        }
+        P0=0xFF;
+        delay(500);
+        //letter_W();
 
         //letter_Y();delay(50);
         //letter_E();delay(50);

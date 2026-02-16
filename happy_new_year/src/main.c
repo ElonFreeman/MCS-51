@@ -4,9 +4,11 @@
 #define RCLK  P3_5
 #define SRCLK P3_6
 
-unsigned char dl=2;//scan speed
+unsigned char dl=2;    //scan speed  function:delay
+unsigned char dlr=100; //rolling     function:delay_row
 
 void delay(unsigned char);
+void delay_row(unsigned char);
 void row_ctrl(unsigned char data);
 
 void delay(unsigned char dl)
@@ -16,6 +18,20 @@ void delay(unsigned char dl)
         for(unsigned char j=0;j<dl;j++)
         {
 
+        }
+    }
+}
+
+void delay_row(unsigned char dlr)
+{
+    for(unsigned char i=0;i<dlr;i++)
+    {
+        for(unsigned char j=0;j<dlr;j++)
+        {
+            for(unsigned char k=0;k<dlr;k++)
+            {
+
+            }
         }
     }
 }
@@ -43,6 +59,7 @@ void letter_H(void)
     P0_0=0;
     delay(dl);
     P0_0=1;
+
     P0_1=0;
     delay(dl);
     P0_1=1;
@@ -389,9 +406,34 @@ void main(void)
 {
     while(1)
     {
-        for(unsigned char i=0;i<250;i++)
+        letter_H();
+        //letter_A();
+        //letter_P();
+        //letter_Y();
+        //letter_N();
+        //letter_E();
+        //letter_W();
+        //letter_R();
+
+
+
+        /*for(unsigned char i=0;i<250;i++)
         {
             letter_H();
+        }
+        P0=0xFF;
+        delay(500);
+
+        for(unsigned char i=0;i<250;i++)
+        {
+            letter_R();
+        }
+        P0=0xFF;
+        delay(500);
+
+        for(unsigned char i=0;i<250;i++)
+        {
+            letter_E();
         }
         P0=0xFF;
         delay(500);
@@ -405,20 +447,6 @@ void main(void)
 
         for(unsigned char i=0;i<250;i++)
         {
-            letter_P();
-        }
-        P0=0xFF;
-        delay(500);
-
-        for(unsigned char i=0;i<250;i++)
-        {
-            letter_P();
-        }
-        P0=0xFF;
-        delay(500);
-
-        for(unsigned char i=0;i<250;i++)
-        {
             letter_Y();
         }
         P0=0xFF;
@@ -426,14 +454,7 @@ void main(void)
 
         for(unsigned char i=0;i<250;i++)
         {
-            letter_N();
-        }
-        P0=0xFF;
-        delay(500);
-
-        for(unsigned char i=0;i<250;i++)
-        {
-            letter_E();
+            letter_P();
         }
         P0=0xFF;
         delay(500);
@@ -447,42 +468,9 @@ void main(void)
 
         for(unsigned char i=0;i<250;i++)
         {
-            letter_Y();
+            letter_N();
         }
         P0=0xFF;
-        delay(500);
-
-        for(unsigned char i=0;i<250;i++)
-        {
-            letter_E();
-        }
-        P0=0xFF;
-        delay(500);
-
-        for(unsigned char i=0;i<250;i++)
-        {
-            letter_A();
-        }
-        P0=0xFF;
-        delay(500);
-
-        for(unsigned char i=0;i<250;i++)
-        {
-            letter_R();
-        }
-        P0=0xFF;
-        delay(500);
-
-
-        //letter_A();
-        //letter_P();
-        //letter_P();
-        //letter_Y();
-        //letter_N();
-        //letter_W();
-        //letter_Y();
-        //letter_E();
-        //letter_A();
-        //letter_R();
+        delay(500);*/
     }
 }

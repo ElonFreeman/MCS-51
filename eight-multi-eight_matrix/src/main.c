@@ -472,17 +472,5 @@ void main(void)
         }
         P0=0xFF;
         delay(500);
-
-
-        //letter_A();
-        //letter_P();
-        //letter_P();
-        //letter_Y();
-        //letter_N();
-        //letter_W();
-        //letter_Y();
-        //letter_E();
-        //letter_A();
-        //letter_R();
     }
 }
